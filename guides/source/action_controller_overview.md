@@ -52,7 +52,7 @@ end
 ```
 
 As an example, if a user goes to `/clients/new` in your application to add a new client, Rails will create an instance of `ClientsController` and call its `new` method. Note that the empty method from the example above would work just fine because Rails will by default render the `new.html.erb` view unless the action says otherwise. The `new` method could make available to the view a `@client` instance variable by creating a new `Client`:
-
+e
 ```ruby
 def new
   @client = Client.new
@@ -719,7 +719,7 @@ Now, the `LoginsController`'s `new` and `create` actions will work as before wit
 
 In addition to "before" filters, you can also run filters after an action has been executed, or both before and after.
 
-"after" filters are similar to "before" filters, but because the action has already been run they have access to the response data that's about to be sent to the client. Obviously, "after" filters cannot stop the action from running.
+"after" filters are similar to "before" filters, but because the action has already been run they have access to the response data that's about to be sent to the client. Obviously, "after" filters cannot stop the action from running. Note that "after" filters are executed only after a successful action but not when an exception was raised.
 
 "around" filters are responsible for running their associated actions by yielding, similar to how Rack middlewares work.
 
